@@ -13,7 +13,7 @@ class ProfilePage extends StatelessWidget {
       ),
       body: Center(
         child: ElevatedButton(
-          onPressed: () => SubRoutes.key.currentState!.pushNamed(
+          onPressed: () => SubRoutes.key.currentState!.pushReplacementNamed(
             SubRoutes.home,
           ),
           child: const Text('home'),

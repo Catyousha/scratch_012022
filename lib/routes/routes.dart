@@ -6,7 +6,7 @@ import 'package:scratch_012022/pages/profile.dart';
 import 'package:scratch_012022/pages/settings.dart';
 
 class Routes {
-  static const dashboard = '/dashboard';
+  static const dashboard = 'dashboard';
 }
 
 class SubRoutes {

@@ -10,6 +10,27 @@ class DashboardRouteObserver extends RouteObserver<PageRoute<dynamic>> {
   final Function(int) changeIndex;
 
   @override
+  void didReplace({Route<dynamic>? newRoute, Route<dynamic>? oldRoute}) {
+    super.didReplace(
+      newRoute: newRoute,
+      oldRoute: oldRoute,
+    );
+    switch (newRoute!.settings.name) {
+      case SubRoutes.home:
+        changeIndex(0);
+        break;
+      case SubRoutes.profile:
+        changeIndex(1);
+        break;
+      case SubRoutes.settings:
+        changeIndex(2);
+        break;
+      default:
+        changeIndex(-1);
+    }
+  }
+
+  @override
   void didPush(Route<dynamic> route, Route<dynamic>? previousRoute) {
     super.didPush(route, previousRoute);
     if (previousRoute == null) return;

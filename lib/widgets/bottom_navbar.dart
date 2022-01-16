@@ -9,13 +9,13 @@ class BottomNavbar extends StatelessWidget {
   final int currentIndex;
 
   final List _route = [
-    () => SubRoutes.key.currentState!.pushNamed(
+    () => SubRoutes.key.currentState!.pushReplacementNamed(
           SubRoutes.home,
         ),
-    () => SubRoutes.key.currentState!.pushNamed(
+    () => SubRoutes.key.currentState!.pushReplacementNamed(
           SubRoutes.profile,
         ),
-    () => SubRoutes.key.currentState!.pushNamed(
+    () => SubRoutes.key.currentState!.pushReplacementNamed(
           SubRoutes.settings,
         ),
   ];
