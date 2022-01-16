@@ -60,6 +60,9 @@ class RouteHandler {
           builder: (_) => const DetailSubpage(),
           settings: const RouteSettings(
             name: SubRoutes.home,
+            arguments: <String, bool>{
+              'disable-bot-nav': true,
+            },
           ),
         );
       case SubRoutes.profile:

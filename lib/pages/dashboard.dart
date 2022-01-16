@@ -13,6 +13,7 @@ class DashboardPage extends StatefulWidget {
 
 class _DashboardPageState extends State<DashboardPage> {
   int currentIndex = 0;
+  bool isBotNavVisible = true;
   List<int> historyIndex = [];
 
   @override
@@ -34,6 +35,11 @@ class _DashboardPageState extends State<DashboardPage> {
           initialRoute: SubRoutes.home,
           observers: [
             DashboardRouteObserver(
+              checkBotNavVisible: (val) {
+                setState(() {
+                  isBotNavVisible = val;
+                });
+              },
               changeIndex: (val) {
                 setState(() {
                   historyIndex.add(currentIndex);
@@ -43,8 +49,11 @@ class _DashboardPageState extends State<DashboardPage> {
             )
           ],
         ),
-        bottomNavigationBar: BottomNavbar(
-          currentIndex: currentIndex,
+        bottomNavigationBar: Visibility(
+          visible: isBotNavVisible,
+          child: BottomNavbar(
+            currentIndex: currentIndex,
+          ),
         ),
       ),
     );
