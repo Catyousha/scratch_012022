@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:scratch_012022/routes/routes.dart';
 
 class DetailSubpage extends StatelessWidget {
   const DetailSubpage({Key? key}) : super(key: key);

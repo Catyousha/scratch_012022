@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:scratch_012022/routes/routes.dart';
+import '../routes/routes.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({Key? key}) : super(key: key);

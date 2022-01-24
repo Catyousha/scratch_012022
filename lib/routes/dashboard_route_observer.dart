@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:scratch_012022/routes/routes.dart';
+import 'routes.dart';
 
 class DashboardRouteObserver extends RouteObserver<PageRoute<dynamic>> {
   DashboardRouteObserver({

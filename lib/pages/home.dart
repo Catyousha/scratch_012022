@@ -1,8 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:scratch_012022/routes/routes.dart';
+import 'package:otp/otp.dart';
+import '../routes/routes.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  final formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -11,13 +19,36 @@ class HomePage extends StatelessWidget {
         automaticallyImplyLeading: false,
         title: const Text('Home'),
       ),
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () => SubRoutes.key.currentState!.pushNamed(
-            HomeSubRoutes.detail,
+      body: Column(
+        children: [
+          Form(
+            key: formKey,
+            child: TextFormField(
+              onSaved: (val) {
+                var code = OTP.generateTOTPCodeString(
+                  "J22U6B3WIWRRBTAV",
+                  DateTime.now().millisecondsSinceEpoch,
+                  algorithm: Algorithm.SHA1,
+                  isGoogle: true,
+                );
+                print(code);
+                print(val == code);
+              },
+            ),
           ),
-          child: const Text('Detail'),
-        ),
+          ElevatedButton(
+            onPressed: () => formKey.currentState!.save(),
+            child: Text('verify otp'),
+          ),
+          Center(
+            child: ElevatedButton(
+              onPressed: () => SubRoutes.key.currentState!.pushNamed(
+                HomeSubRoutes.detail,
+              ),
+              child: const Text('Detail'),
+            ),
+          ),
+        ],
       ),
     );
   }

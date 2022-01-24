@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:scratch_012022/pages/dashboard.dart';
-import 'package:scratch_012022/pages/home.dart';
-import 'package:scratch_012022/pages/home/detail.dart';
-import 'package:scratch_012022/pages/profile.dart';
-import 'package:scratch_012022/pages/settings.dart';
+import '../pages/dashboard.dart';
+import '../pages/home.dart';
+import '../pages/home/detail.dart';
+import '../pages/profile.dart';
+import '../pages/settings.dart';
 
 class Routes {
   static const dashboard = 'dashboard';
